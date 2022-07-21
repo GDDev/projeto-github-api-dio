@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import * as S from './styled';
 import useGithub from '../../hooks/github-hooks';
 
@@ -14,8 +14,8 @@ const Header = () => {
     return (
         <header>
             <S.Wrapper>
-                <input type="text" placeholder="Procurar usuário" onChange={submitGetUser}/>
-                <button type="submit">Buscar</button>
+                <input type="text" placeholder="Procurar usuário" onChange={(event) => setUsernameForSearch(event.target.value)}/>
+                <button type="submit" onClick={submitGetUser}>Buscar</button>
             </S.Wrapper>
         </header>
     )
